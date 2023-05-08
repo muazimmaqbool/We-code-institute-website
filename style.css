@@ -1,0 +1,574 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto:wght@500;700&display=swap');
+
+/*https://www.w3schools.com/cssref/sel_root.php visit this to study about :root*/
+/*1 rem = 16 pixels*/
+/*
+Rem and pixel (px) are two units of measurement frequently used in CSS and HTML to define font size, margin or image size for example. However, the two units have a big difference in terms of web accessibility, because a pixel is not responsive and that's why it'sbetter to use REM.
+*/
+*{
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+html{
+    font-size: 63%;
+    overflow-x: hidden;
+    scroll-behavior:smooth;
+}
+/*navbar*/
+header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    /* background: #333; */
+    background: rgb(51, 51, 51,0.5);
+    /* background: #333; */
+    /* opacity: 0.5; */
+    padding: .2rem 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 .5rem 1.5rem rgba(0,0,0,0.1);
+    z-index: 20;
+}
+.logo img{
+     height:10rem;
+}
+.navbar a{
+    font-size: 2rem;
+    padding: .5rem 1rem;
+    color:#ac5921;
+    border: .1rem solid transparent;
+}
+.navbar a:hover{
+    color: white;
+    border: 2px solid rgba(250,170,124,0.2);
+}
+.icons i{
+    cursor: pointer;
+    margin-left: .5rem;
+    height:4.5rem;
+    width:4.5rem;
+    line-height: 5rem;
+    /* background:#ac5921; */
+    text-align: center;
+    font-size: 3rem;
+    color: white;
+}
+.icons i:hover{
+    color:#ac5921;
+    /* transform:rotate(360deg); */
+}
+#menu{
+    display: none;
+}
+/*navbar ends here*/
+/*home section*/
+.home .slider .bg-image{
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    justify-content: flex-start;
+}
+.home .slider .bg-image{
+    background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(bg.jpg);
+}
+
+.home .slider .bg-image
+{
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.home .slider .bg-image .content{
+    text-align: center;
+    padding-left: 9rem;
+    margin-top: 10rem;
+}
+.home .slider .bg-image .content h3{
+    color:#ff6600;
+    font-size: 3rem;
+    font-weight: 300;
+}
+.home .slider .bg-image .content h1{
+    color:white;
+    font-size: 7rem;
+}
+.home .slider .bg-image .content p{
+    color: #e6e7e7;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+    padding: .5rem 0;
+    line-height: 1.5;
+    font-weight: 200;
+}
+.home .slider .bg-image .content span{
+    color:#fff724;
+}
+.btn{
+    margin-top: 1rem;
+    display: inline-block;
+    font-size: 2rem;
+    color: white;
+    border: .1rem solid rgba(205, 170, 124, 0.2);
+    background: transparent; 
+    cursor: pointer;
+    padding: .8rem 3rem;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    border-radius: 5px;
+}
+.btn::before{
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: #ac5921;
+    z-index: -1;
+    position: absolute;
+    top:0;
+    left: -100%;
+    transition: .5s;
+}
+.btn:hover.btn::before{
+    left: 0;
+
+}
+
+/*home section ender here*/
+/*courses section starts*/
+section{
+    padding: 5rem 9%;
+}
+.heading{
+    text-align: center;
+    color:#333;
+    font-size: 4.5rem;
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 1.3px;
+    /* background:linear-gradient(rgba(0,0,0,0.9),rgba(0,0,0,0.6)), url(cover.jpg); */
+    background-position: center;
+    background-size:contain;
+    backface-visibility: 0.5;
+    
+}
+.subheading{
+    text-align: center;
+    color: #c4672a;
+    font-size: 2.5rem;
+    padding: .8rem 2rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+    /* background-color: rgb(51, 51, 51,0.5); */
+    background-color: #333;
+    /* background:linear-gradient(#333,#ac5921); */
+    display: inline-block;
+    border-radius: 10px;
+}
+.courses .box-container{
+    display: flex; /*makes them in one line*/
+    gap: 1.5rem;
+}
+.courses .box-container .box{
+    width: 33%;
+    background:#333;
+    box-shadow: 0 .5rem 1.5rem rgba(0,0,0,0.1);
+    text-align: center;
+    padding-bottom: 1%;
+    border-radius: 10px;
+}
+.courses .box-container .box .Course-Image{
+    height: 25rem;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
+}
+.courses .box-container .box .Course-Image img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.courses .box-container .box .Course-Image:hover img{
+    transform: scale(1.1); /*for zooming the image when hover*/
+}
+.courses .box-container .box .content{
+    padding: 2rem;
+    padding-top: 2rem;
+}
+.courses .box-container .box .content h3{
+    color:#ac5921;
+    font-size: 2.2rem;
+    font-weight: bold;
+}
+.courses .box-container .box .content p{
+    color: white;
+    font-size: 1.4rem;
+    font-weight: 200;
+    padding: .5rem 0;
+    line-height: 1.5rem;
+    
+}
+/*courses section ends here*/
+/* course offered starts */
+.courses-offered{
+    background: url(coursesBG.jpg) left top no-repeat ;
+}
+
+.courses-offered .course-container{
+    padding: 3rem 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(50rem,2fr));
+    gap:5rem 9.7rem;
+} 
+.courses-offered .course-container .courseList .course-name{
+    display: flex;
+    justify-content: space-between; /*for image*/
+    padding: 1rem 0;
+    margin-top: .5rem;
+}
+.courses-offered .course-container .courseList .course-name h2{
+    font-size: 3rem;
+    /* color: #e5e5e5; */
+    color:rgba(255, 255, 255, 0.699);
+    font-weight: 300;
+}
+.courses-offered .course-container .courseList .course-data h3{
+    font-size: 2rem;
+    color:#ac5921;
+    font-weight: 200;
+    display: inline-block;
+    margin-left:5px;
+}
+.courses-offered .course-container .courseList .course-data span{
+    width:37%;
+    display: inline-block;
+    border: 1px dotted #e5e5e5;
+}
+.courses-offered .course-container .courseList .course-data ul{
+    display: flex;
+    font-size: 1.5rem;
+    list-style: none;
+    padding: .8rem 0;
+    font-weight: 200;
+}
+.courses-offered .course-container .courseList .course-data ul li a{
+    color: #b9b9b9;
+    padding: 0 2px;
+    margin-left: 5px;
+}
+#headingCourses{
+    color:whitesmoke;
+}
+
+/* course offered ends */
+/*  events section starts */
+.event-List{
+    display:grid; 
+    width: 100%;
+    grid-template-columns: repeat(auto-fit,minmax(30rem,1fr));
+    grid-gap: 1.5rem;
+}
+.event-List .item .image img{
+    width: 100%;
+    border-radius: 10px;
+}
+.event-List .item{
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+}
+.event-List .item::before{
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    display: none;
+    top: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background:rgba(0, 0, 0, 0.8);
+    z-index: 5;
+}
+.event-List .item:hover.item::before{
+    display: block;
+    border-radius: 10px;
+
+}
+.event-List .item .event-info{
+    position: absolute;
+    top: 130%;
+    left: 0;right: 0;bottom: 0;
+    display: flex;
+    justify-content: center;
+    z-index: 10;
+    text-align: center;
+    transition: 1s;
+}
+.event-List .item .event-info h3{
+    font-size: 2.5rem;
+    color: white;
+    padding: 1rem 0;
+    text-transform: uppercase;
+}
+.event-List .item .event-info span{
+    font-size: 2rem;
+    color:#ac5921;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+.event-List .item .event-info ul{
+    list-style: none;
+    display: flex;
+    grid-gap: 2rem;
+    padding: 1rem 0;
+    justify-content: center;
+    font-size: 3rem;
+}
+.event-List .item .event-info ul li a{
+     
+    cursor: pointer;
+}
+.event-List .item:hover .event-info{
+    top: 25%; 
+}
+.event-info ul li a{
+    transition: 0.1s;
+    color: #b9b6b6; 
+}
+.event-info ul li a:hover{
+    color:#ac5921;
+}
+/*  events section ends*/
+
+/*join now section starts*/
+.join-now{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.join-now .image{
+    width: 50%;
+    background: url(joinnowimage.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    
+
+}
+.join-now .form{
+    background: #181818;
+    width: 50%;
+    padding: 9rem 5%;
+}
+.join-now .form h1{
+    color: #ac5921;
+}
+.join-now .form-holder{
+    display: flex;
+    grid-gap: 3rem;
+    width: 100%;
+}
+.join-now .form form input,
+.join-now .form form select{
+    display: block;
+    margin: 2rem 0;
+    width: 100%;
+    background: none;
+    border-bottom: .1rem solid #ac5921; 
+    font-size: 2rem;
+    font-weight: 200;
+}
+/*join now section ends*/
+/* footer section starts */
+.footer{
+    background: #333;
+    text-align: center;
+    color: #b2b2b2;
+    font-size: 1.3rem;
+}
+.footer img{
+    height: 20rem;
+    margin-bottom: -40px;
+}
+.footer .container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(30rem,2fr));
+    color: #b2b2b2;
+    grid-gap:1rem;
+    padding: 4rem 0;
+    border-bottom: 1px solid #b2b2b2;
+}
+.footer .container div{
+    padding: 0 7rem;
+}
+.footer .container h3{
+    color: whitesmoke;
+    font-size: 2rem;
+    padding-bottom: .8rem;
+
+}
+.footer .container ul{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding-top: 1rem;
+}
+.footer .container ul li a{
+    color: #b2b2b2;
+    margin-left: 10px;
+    font-size: 25px;
+}
+.footer .container span{
+    display: block;
+
+}
+/* footer section ends */
+
+/*side scroll bar (custome) */
+::-webkit-scrollbar{
+    width: 15px;
+}
+::-webkit-scrollbar-track{
+    background: #333;
+}
+::-webkit-scrollbar-thumb{
+    background: #ac5921;
+}
+/* ::-webkit-scrollbar-button{
+    background-color: #b9b6b6; 
+    /*they are on top and bottom of the scroll bar
+} */
+
+/*code to goup button */
+.go-up{
+    position: fixed;
+    right: 2%;
+    bottom: 10%;
+    width: 30px;
+    height: 30px;
+    background: #ac5921;
+    color: #fff;
+    cursor: pointer;
+}
+
+
+
+/*media query*/
+@media(max-width:990px){ /* for tablet*/
+    html{
+        font-size: 55%;
+    }
+    header{
+        padding: .2rem 2rem;
+    }
+    .logo img{
+        height: 8rem;
+    }
+
+    /*for courses offered section */
+    .courses-offered .course-container{
+        grid-template-columns: repeat(autofit,minmax(30rem,2fr));
+    }
+    .courses-offered .course-container .courseList .course-data span{
+        width:15%;
+    }
+}
+
+
+@media (max-width:760px) { /* for mobile phones*/
+    .logo img{
+        height: 8rem;
+    }
+    #menu{
+        display: inline-block;
+    }
+    header{
+        width: 100%;
+    }
+    .navbar{
+        position: absolute;
+        top:100%;
+        left:0;
+        right: 0;
+        background-color: rgb(73, 70, 70);
+        border-top: .1rem solid rgba(205,170,124,0.2);
+        border-bottom: .1rem solid rgba(205,170,124,0.2);
+        padding: 1rem;
+        
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+    /* .icons{
+        margin-right: 9rem;
+    } */
+    .navbar.active{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+    /*clip-path property in CSS allows you to specify a specific region of an element to display, with the rest being hidden (or “clipped”) away.*/
+    .navbar a{
+        display: block;
+        padding: 1.5rem;
+        margin: 1rem;
+        font-size: 2rem;
+        background-color: #333;
+    }
+    /*navbar ends here*/
+    /*home-page media query*/
+    .home .slider .bg-image{
+        /* display: flex; */
+        /* align-items: center; */
+        height: 100vh;
+        justify-content:center;
+    }
+    .home .slider .bg-image{
+        background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(bgsmall.jpg);
+    }
+    .home .slider .bg-image
+    {
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .home .slider .bg-image .content{
+        /* text-align: center;
+        padding-left: 9rem;
+        margin-top: 10rem; */
+        padding: 0;
+    }
+    .home .slider .bg-image .content h1{
+        font-size: 5rem;
+    }
+    .home .slider .bg-image .content p{
+        font-size: 1.5rem;
+    }
+    /*course section */
+    .courses .box-container{
+        flex-wrap: wrap;
+    }
+    .courses .box-container .box{
+        width: 100%; /*makes them one at a time instead in the line*/
+    }
+    
+    /* for join now section */
+    .join-now .image{
+        width: 0;
+    }
+    .join-now .form{
+        width: 100%;
+    }
+    .join-now .form .form-holder{
+        display: block;
+    }
+    
+}
+/*
+
+*/
